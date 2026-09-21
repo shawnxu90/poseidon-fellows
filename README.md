@@ -1,2 +1,2 @@
 # poseidon-fellows
-Application for UCSD Poseidon Fellows
+Website and application for UCSD Poseidon Fellows
