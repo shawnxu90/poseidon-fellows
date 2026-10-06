@@ -139,9 +139,26 @@
   .step.hot .marker{background:var(--gold);color:var(--white);}
   .step .d{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--navy);}
   .step .l{font-size:0.88rem;color:var(--muted);margin-top:4px;}
+  .step.link{text-decoration:none;color:inherit;}
+  .step.link .rsvp{display:inline-block;margin-top:6px;font-size:0.78rem;font-weight:600;color:var(--ocean);}
+  .step.link:hover .rsvp{text-decoration:underline;}
+  .step.link:hover .marker{border-color:var(--ocean);}
   .timeline-note{margin-top:44px;background:var(--gold-light);border:1.5px solid var(--gold-border);border-radius:12px;padding:18px 22px;font-size:0.95rem;color:#5a3e00;display:flex;gap:14px;align-items:flex-start;}
   .timeline-note b{color:#3f2b00;}
 
+  /* events */
+  .events{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+  .event{display:grid;grid-template-columns:150px 1fr;gap:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s;}
+  .event:hover{box-shadow:0 14px 36px rgba(0,36,91,0.10);transform:translateY(-2px);}
+  .event .headshot{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--light);margin-bottom:14px;}
+  .event .when .d{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--gold);line-height:1;}
+  .event .when .t{font-size:0.8rem;color:var(--muted);margin-top:8px;line-height:1.45;}
+  .event h3{font-size:1.2rem;font-weight:600;margin-bottom:8px;}
+  .event p{font-size:0.93rem;color:#2a3352;}
+  .event .agenda{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:0.82rem;color:var(--muted);}
+  .event .agenda b{color:var(--navy);font-weight:600;}
+  .event .go{display:inline-block;margin-top:14px;font-size:0.88rem;font-weight:600;color:var(--ocean);}
+  .event:hover .go{text-decoration:underline;}
   /* people */
   .team{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
   .person{display:flex;gap:22px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
@@ -211,6 +228,7 @@
   .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.12);font-size:0.8rem;opacity:0.6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
   @media(max-width:960px){
+    .events{grid-template-columns:1fr;}
     .pillars,.elig{grid-template-columns:repeat(2,1fr);}
     .cohort-grid{grid-template-columns:repeat(2,1fr);}
     .about-grid,.format-grid,.speaker{grid-template-columns:1fr;gap:36px;}
@@ -222,6 +240,7 @@
     .step .marker{margin:0;flex-shrink:0;}
   }
   @media(max-width:640px){
+    .event{grid-template-columns:1fr;gap:12px;}
     section{padding:64px 0;}
     .quote-card{min-height:0;padding:36px 28px;}
     .links{display:none;position:absolute;top:66px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px 24px;gap:18px;border-bottom:1px solid var(--border);}
@@ -246,6 +265,7 @@
       <a href="#about">About</a>
       <a href="#program">Program</a>
       <a href="#timeline">Timeline</a>
+      <a href="#events">Events</a>
       <a href="#people">Lecturers</a>
       <a href="#cohort">Alumni</a>
       <a class="btn btn-gold" href="/apply">Apply for 2027</a>
@@ -275,7 +295,7 @@
     <div><div class="n">12</div><div class="l">Fellows per cohort</div></div>
     <div><div class="n">Jan – Jun</div><div class="l">Wednesdays 5–7 PM, every other week</div></div>
     <div><div class="n">All levels</div><div class="l">undergrad, master's, PhD, postdoc</div></div>
-    <div><div class="n">Nov 12, 2026</div><div class="l">Application deadline</div></div>
+    <div><div class="n">Nov 12, 2026</div><div class="l">Application Deadline</div></div>
   </div>
 </div>
 
@@ -342,18 +362,45 @@
     <h2>Application timeline</h2>
     <p class="lede">Six dates to know. Final deadline is 11:59 PM PT on Nov 12, 2026.</p>
     <div class="timeline">
-      <div class="step hot"><div class="marker">1</div><div><div class="d">Sept 28</div><div class="l">Application opens</div></div></div>
-      <div class="step"><div class="marker">2</div><div><div class="d">Oct 15</div><div class="l">Virtual info session</div></div></div>
-      <div class="step"><div class="marker">3</div><div><div class="d">Nov 5</div><div class="l">IRL info session</div></div></div>
-      <div class="step"><div class="marker">4</div><div><div class="d">Nov 12</div><div class="l">Application deadline</div></div></div>
+      <div class="step hot"><div class="marker">1</div><div><div class="d">Sept 28</div><div class="l">Application Opens</div></div></div>
+      <a class="step link" href="https://luma.com/30nsiy63" target="_blank" rel="noopener"><div class="marker">2</div><div><div class="d">Oct 15</div><div class="l">Virtual Info Session<br><span class="rsvp">Register here ↗</span></div></div></a>
+      <a class="step link" href="https://luma.com/pxsq5lm0" target="_blank" rel="noopener"><div class="marker">3</div><div><div class="d">Nov 5</div><div class="l">Poseidon Fireside<br><span class="rsvp">Register here ↗</span></div></div></a>
+      <div class="step"><div class="marker">4</div><div><div class="d">Nov 12</div><div class="l">Application Deadline</div></div></div>
       <div class="step"><div class="marker">5</div><div><div class="d">Nov 18</div><div class="l">Interviews</div></div></div>
-      <div class="step"><div class="marker">6</div><div><div class="d">Dec 4</div><div class="l">Decisions sent</div></div></div>
+      <div class="step"><div class="marker">6</div><div><div class="d">Dec 4</div><div class="l">Decisions Sent</div></div></div>
     </div>
     <div class="timeline-note"><span style="font-size:1.3rem;">📅</span><div><b>Program runs January to June 2027.</b> Sessions are every other Wednesday, 5–7 PM. Make sure you can commit to the full run before applying.</div></div>
   </div>
 </section>
 
-<section id="people">
+<section id="events" style="padding-bottom:40px;">
+  <div class="wrap">
+    <div class="eyebrow">Upcoming events</div>
+    <h2>Two ways to learn more before you apply.</h2>
+    <p class="lede">Both are free and open to all UC San Diego students. Neither requires a startup idea.</p>
+    <div class="events">
+      <a class="event" href="https://luma.com/30nsiy63" target="_blank" rel="noopener">
+        <div class="when"><div class="d">Oct 15</div><div class="t">Virtual · Zoom</div></div>
+        <div class="body">
+          <h3>Virtual Info Session</h3>
+          <p>Hear from the teaching team on what the program is like. Then, meet the inaugural cohort of Poseidon Fellows, and have an off-the-record discussion on what the experience was like - both the good and hard parts. Open Q&amp;A afterwards.</p>
+          <span class="go">Register here ↗</span>
+        </div>
+      </a>
+      <a class="event" href="https://luma.com/pxsq5lm0" target="_blank" rel="noopener">
+        <div class="when"><img class="headshot" src="images/mark-suster.jpg" alt="Mark Suster" onerror="this.style.display='none'"><div class="d">Nov 5</div><div class="t">4:00 – 6:30 PM · In person</div></div>
+        <div class="body">
+          <h3>Poseidon Fireside with Mark Suster</h3>
+          <p>Mark Suster runs Upfront Ventures, one of Los Angeles’s largest venture capital firms, and is a repeat entrepreneur who sold his last company to Salesforce. Join us for an in-depth chat on his path from Sun God to backing billion dollar startups. Then, following a student and alumni mixer, join us for an in-person info session to learn more about what we have planned for Poseidon Fellows 2027.</p>
+          <div class="agenda"><span><b>4:00</b> Fireside chat</span><span><b>5:00</b> Student + alumni mixer</span><span><b>5:30</b> Info session + Q&amp;A</span></div>
+          <span class="go">Register here ↗</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="people" style="padding-top:40px;">
   <div class="wrap">
     <div class="eyebrow">Teaching team</div>
     <h2>Chief lecturers</h2>
